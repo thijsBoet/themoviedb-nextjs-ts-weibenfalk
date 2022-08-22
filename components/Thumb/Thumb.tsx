@@ -1,18 +1,18 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 type Props = {
-    imgUrl: string,
-}
+	imgUrl: string;
+};
 
 const Thumb = ({ imgUrl }: Props) => (
 	<Image
 		placeholder='blur'
-		blurDataURL='./placeholder.jpg'
-		src={imgUrl}
+		blurDataURL='/placeholder.jpg'
 		className='rounded-lg'
-		objectFit='cover'
-		alt='movie thumbnail'
 		layout='fill'
+		objectFit='cover'
+		src={imgUrl}
+		alt='thumb'
 	/>
 );
 

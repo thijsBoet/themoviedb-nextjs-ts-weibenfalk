@@ -5,6 +5,7 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
+		
 		gridTemplateColumns: {
 			'auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))',
 		},

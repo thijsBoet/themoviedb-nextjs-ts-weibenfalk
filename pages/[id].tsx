@@ -5,7 +5,7 @@ import {
 	POSTER_SIZE,
 	BACKDROP_SIZE,
 } from '../config';
-// Basic Fetcg
+// Basic Fetch
 import { basicFetch } from '../api/fetchFunctions';
 // Types
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
@@ -23,11 +23,18 @@ type Props = {
 	cast: Cast[];
 };
 
-const Movie: NextPage = ({ movie, directors, cast }: Props) => (
+const Movie: NextPage<Props> = ({ movie, directors, cast }) => (
 	<main>
 		<Header />
 		<Breadcrumb title={movie.original_title} />
-		<MovieInfo />
+		<MovieInfo
+			thumbUrl={
+				movie.poster_path
+					? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+					: './no_image.jpg'
+			}
+			rating={movie.vote_average}
+		/>
 		<Grid>
 			<Card />
 		</Grid>
