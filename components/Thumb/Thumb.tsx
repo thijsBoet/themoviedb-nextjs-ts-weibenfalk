@@ -6,12 +6,12 @@ type Props = {
 
 const Thumb = ({ imgUrl }: Props) => (
 	<Image
+		src={imgUrl}
 		placeholder='blur'
 		blurDataURL='/placeholder.jpg'
 		className='rounded-lg'
 		layout='fill'
 		objectFit='cover'
-		src={imgUrl}
 		alt='thumb'
 	/>
 );
